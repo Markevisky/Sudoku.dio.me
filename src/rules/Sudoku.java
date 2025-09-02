@@ -1,11 +1,11 @@
-package view;
+package rules;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-public class Sudoku {
+public class Sudoku extends Games{
     class Tile extends JButton{
         int r;
         int c;
@@ -16,30 +16,6 @@ public class Sudoku {
     }
     int boardwidth = 600;
     int boardHeight = 650;
-
-    String[] puzzle = {
-        "--74916-5",
-        "2---6-3-9",
-        "-----7-1-",
-        "-586----4",
-        "--3----9-",
-        "--62--187",
-        "9-4-7---2",
-        "67-83----",
-        "81--45---"
-    };
-
-    String[] solution = {
-        "387491625",
-        "241568379",
-        "569327418",
-        "758619234",
-        "123784596",
-        "496253187",
-        "934176852",
-        "675832941",
-        "812945763"
-    };
 
     JFrame frame = new JFrame("Sudoku");
     JLabel textJLabel = new JLabel();
@@ -59,7 +35,7 @@ public class Sudoku {
 
         textJLabel.setFont(new Font("Arial", Font.BOLD, 30));
         textJLabel.setHorizontalAlignment(JLabel.CENTER);
-        textJLabel.setText("Sudoku: 0");
+        textJLabel.setText("Contador de erros: 0");
 
         TextPanel.add(textJLabel);
         frame.add(TextPanel, BorderLayout.NORTH);
@@ -115,7 +91,7 @@ public class Sudoku {
                                 tile.setText(numSelectedText);
                             } else {
                                 errors += 1;
-                                textJLabel.setText("Sudoku: " + String.valueOf(errors));
+                                textJLabel.setText("Contador de erros: " + String.valueOf(errors));
                             }
                         }
                     }
