@@ -3,7 +3,6 @@ package rules;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 public class Sudoku extends Games{
     class Tile extends JButton{
